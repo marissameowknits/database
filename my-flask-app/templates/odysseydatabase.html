@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odyssey Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Odyssey Database</h1>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zipcode</th>
+                <th>Reason for Returning</th>
+            </tr>
+            {% for user in returned_names %}
+            <tr>
+                <td>{{ user.name_ID }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.city }}</td>
+                <td>{{ user.state }}</td>
+                <td>{{ user.zipcode }}</td>
+                <td>{{ user.reason_returned }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Add New Entry</h2>
+        <form action="/add" method="post">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="state" placeholder="State" required>
+            <input type="text" name="zipcode" placeholder="Zipcode" required>
+            <input type="text" name="reason_returned" placeholder="Reason for Returning" required>
+            <button type="submit">Add Entry</button>
+        </form>
+    </div>
+
+</body>
+</html>

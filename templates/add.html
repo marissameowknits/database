@@ -1,0 +1,28 @@
+<!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Add Entry</title>\
+    <link rel="stylesheet" href="\{\{ url_for('static', filename='style.css') \}\}">\
+</head>\
+<body>\
+\
+    <h1>Add a New Entry</h1>\
+\
+    <form action="/add" method="post">\
+        <input type="text" name="first_name" placeholder="First Name" required>\
+        <input type="text" name="last_name" placeholder="Last Name" required>\
+        <input type="text" name="address" placeholder="Address" required>\
+        <input type="text" name="city" placeholder="City" required>\
+        <input type="text" name="state" placeholder="State" required>\
+        <input type="text" name="zipcode" placeholder="Zipcode" required>\
+        <input type="text" name="reason_returned" placeholder="Reason for Returning" required>\
+        <button type="submit">Add Entry</button>\
+    </form>\
+\
+    <br>\
+    <a href="/">\uc0\u11013  Back to Home</a>\
+\
+</body>\
+</html>}
